@@ -18,3 +18,6 @@ SELECT countries.name, countries.government_form, countries.capital, countries.l
 
 7. What query would you run to get all the cities of Argentina inside the Buenos Aires district and have the population greater than 500, 000? The query should return the Country Name, City Name, District and Population
 SELECT countries.name, cities.name, cities.district, cities.population FROM countries JOIN cities ON countries.id = cities.country_id WHERE countries.name = "Argentina" AND cities.district = "Buenos Aires" AND cities.population > 500000;
+
+8. What query would you run to summarize the number of countries in each region? The query should display the name of the region and the number of countries. Also, the query should arrange the result by the number of countries in descending order
+SELECT countries.region AS region, COUNT(countries.id) AS num_of_countries FROM countries GROUP BY countries.region ORDER BY num_of_countries DESC;
