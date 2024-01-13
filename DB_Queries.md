@@ -12,3 +12,6 @@ SELECT countries.name AS country_name, languages.language, languages.percentage 
 
 5. What query would you run to get all the countries with Surface Area below 501 and Population greater than 100,000?
 SELECT countries.name AS country_name, countries.surface_area AS country_area, countries.population FROM countries WHERE countries.surface_area < 501 AND countries.population > 100000;
+
+6. What query would you run to get countries with only Constitutional Monarchy governments, with a capital greater than 200 and a life expectancy greater than 75 years?
+SELECT countries.name, countries.government_form, countries.capital, countries.life_expectancy FROM countries WHERE countries.government_form = "Constitutional Monarchy" AND countries.capital > 200 AND countries.life_expectancy > 75;
