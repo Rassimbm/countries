@@ -6,3 +6,6 @@ SELECT countries.name AS name, COUNT(cities.id) AS cities FROM countries JOIN ci
 
 3. What query would you run to get all the cities in Mexico with a population of greater than 500,000? Your query should arrange the result by population in descending order
 SELECT cities.name, cities.population, cities.country_id FROM cities WHERE cities.population > 500000 AND cities.country_id = (SELECT id FROM countries WHERE countries.name = "Mexico") ORDER BY cities.population DESC;
+
+4. What query would you run to get all languages in each country with a percentage greater than 89%? Your query should arrange the result by percentage in descending order
+SELECT countries.name AS country_name, languages.language, languages.percentage FROM countries LEFT JOIN languages ON countries.id = languages.country_id WHERE languages.percentage > 8.9 ORDER BY languages.percentage DESC;
